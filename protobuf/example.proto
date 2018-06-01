@@ -1,0 +1,38 @@
+syntax = "proto2";
+package protobuf;
+
+//protoc -I=protobuf --go_out=protobuf protobuf/*.proto
+message ExampleMessageReq {
+    required string DocCoolName = 1;
+    required InfoMessage Data = 2;
+}
+message InfoMessage {
+    required string Method = 1;
+    required string Url = 2;
+}
+message ExampleMessageRsp {
+    required string DocCoolName = 1;
+    required InfoMessage Data = 2;
+}
+
+
+
+message BytesMessageReq {
+    required string DocCoolName = 1;
+    required bytes Data = 2;//bytes包装的message为BytesMessageInfo
+}
+message BytesMessageRsp {
+    required string BytesName = 1;
+    required bytes Data = 2; //bytes包装的message为BytesMessageInfo
+}
+
+message BytesMessageInfo {
+    required string RespName = 1;
+    required int64 RespTime = 2;
+    optional int64 Options = 3;
+    required NextMessage Data = 4;
+}
+message NextMessage {
+    required string NextName = 1;
+    required int64 NextTime = 2;
+}
