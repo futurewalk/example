@@ -7,7 +7,7 @@ var Resolver = {}
 // }
 // in this method ,you can replace this data to another protoBuf message for field type bytes
 Resolver.byteInvoke = function (plugin) {
-    if (plugin.StructName == "BytesMessageReq" && plugin.FieldName == "Data" && plugin.Url == '/v1/example/BytesSupport') {
+    if (plugin.StructureName == "BytesMessageReq" && plugin.FieldName == "Data" && plugin.Url == '/v1/example/BytesSupport') {
         plugin.Swap("BytesMessageInfo");
     }
 }
@@ -16,7 +16,7 @@ Resolver.dataInvoke = function (plugin){
 
 }
 Resolver.RspInvoke = function (plugin) {
-    if (plugin.StructName == "BytesMessageRsp" && plugin.FieldName == "Data" && plugin.Url == '/v1/example/BytesSupport') {
+    if (plugin.StructureName == "BytesMessageRsp" && plugin.FieldName == "Data" && plugin.Url == '/v1/example/BytesSupport') {
         plugin.Swap("BytesMessageInfo");
     }
 }
