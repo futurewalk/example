@@ -36,3 +36,18 @@ message NextMessage {
     required string NextName = 1;
     required int64 NextTime = 2;
 }
+
+
+message RepeatMessageReq {
+    required string Name = 1;
+    repeated string Subject = 2;
+    repeated RepeatData Data = 3;
+}
+message RepeatData {
+    required string ReadyName = 1;
+}
+message RepeatMessageResp {
+    required string Name = 1;
+    repeated string Subject = 2;
+    repeated RepeatData Data = 3;
+}
